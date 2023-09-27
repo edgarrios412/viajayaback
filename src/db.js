@@ -7,11 +7,6 @@ const {DB} = process.env;
 const sequelize = new Sequelize(DB+"?ssl=true", {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-    dialectOptions: {
-      ssl: {
-        rejectUnauthorized: false, // Esto podría ser necesario en algunos casos con certificados autofirmados
-      },
-    },
   });
 
   const basename = path.basename(__filename);
